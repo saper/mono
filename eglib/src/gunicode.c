@@ -221,7 +221,7 @@ g_get_charset (G_CONST_RETURN char **charset)
 		/* These shouldn't be heap allocated */
 #if defined(HAVE_LANGINFO_H)
 		my_charset = nl_langinfo (CODESET);
-#elif HAVE_LOCALCHARSET_H
+#elif defined(HAVE_LOCALCHARSET_H)
 		my_charset = locale_charset ();
 #else
 		my_charset = "UTF-8";
