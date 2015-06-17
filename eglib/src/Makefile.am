@@ -65,10 +65,12 @@ libeglib_static_la_CFLAGS = $(libeglib_la_CFLAGS)
 AM_CPPFLAGS = -I$(srcdir)
 
 if HOST_WIN32
-libeglib_la_LIBADD = -lm $(LIBICONV) -lpsapi
+libeglib_la_LIBADD = -lm $(LTLIBICONV) -lpsapi
 else
 if PLATFORM_ANDROID
 libeglib_la_LIBADD = -llog
+else
+libeglib_la_LIBADD = $(LTLIBICONV)
 endif
 endif
 
