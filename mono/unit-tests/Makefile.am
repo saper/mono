@@ -16,7 +16,7 @@ MCS = $(MCS_NO_LIB)
 
 test_cflags = $(AM_CFLAGS) $(SGEN_DEFINES)
 test_ldadd = libtestlib.la \
-	$(LIBGC_LIBS) $(GLIB_LIBS) -lm $(LIBICONV)
+	$(LIBGC_LIBS) $(GLIB_LIBS) -lm
 if HOST_DARWIN
 test_ldflags = -framework CoreFoundation -framework Foundation
 endif
@@ -26,7 +26,7 @@ sgen_libs = \
 	$(monodir)/mono/metadata/libmonoruntimesgen.la	\
 	$(monodir)/mono/sgen/libmonosgen.la	\
 	$(monodir)/mono/utils/libmonoutils.la \
-	$(GLIB_LIBS) $(LIBICONV)
+	$(GLIB_LIBS)
 
 if !CROSS_COMPILE
 if !HOST_WIN32
